@@ -1,7 +1,4 @@
 # CH02 感知机
-![Hits](https://www.smirkcao.info/hit_gits/Lihang/CH02/README.md)
-
-[TOC]
 
 ## 前言
 
@@ -38,7 +35,7 @@
 - 提出感知机算法的大参考文献是本文第一篇文献， 这个文章发表在Psycological Review上。不过这个文章，真的不咋好看。
 - 书中有提到函数间隔，几何间隔，这里间隔就是margin
 - 在[CH07](../CH07/README.md)中有说明， `分离超平面将特征空间划分为两个部分，一部分是正类， 一部分是负类。法向量指向的一侧为正类，另一侧为负类。`
-- 感知机损失函数$L=\max(0, -y_i(w\cdot x_i+b))$，这个在[CH07](../CH07/README.md)中将hinge loss的时候有说明。
+- 感知机损失函数$L=\max(0, -y_i(w\cdot x_i+b))$，这个在[CH07](../CH07/README.md)中讲hinge loss的时候有说明。
 
 ## 三要素
 
@@ -52,7 +49,7 @@
 
 ### 策略
 
-确定学习策略就是定义**(经验)**损失函数并将损失函数最小化。
+确定学习策略就是定义**经验**损失函数并将损失函数最小化。
 
 注意这里提到了**经验**，所以学习是base在**训练数据集**上的操作
 
@@ -76,7 +73,9 @@ $$
 
 #### 原始形式
 
-> 输入：$T=\{(x_1,y_1),(x_2,y_2),\dots,(x_N,y_N)\}\\ x_i\in \cal X=\bf R^n\mit , y_i\in \cal Y\it =\{-1,+1\}, i=1,2,\dots,N; \ \ 0<\eta\leqslant 1$
+> 输入：
+$ T=\{(x_1,y_1),(x_2,y_2),\dots,(x_N,y_N)\}\\ x_i\in \cal X=\bf R^n\mathit , y_i\in \cal Y\it =\{-1,+1\}, i=1,2,\dots,N; \ \ 0<\eta\leqslant 1 $
+
 >
 > 输出：$w,b;f(x)=sign(w\cdot x+b)$
 >
@@ -86,12 +85,12 @@ $$
 >
 > 1. 如果$y_i(w\cdot x_i+b)\leqslant 0$
 >    $$
->    w\leftarrow w+\eta y_ix_i \nonumber\\
+>    w\leftarrow w+\eta y_ix_i \\
 >    b\leftarrow b+\eta y_i
 >    $$
 > 4. 转至(2)，直至训练集中没有误分类点
 
-注意这个原始形式中的迭代公式，可以对$x​$补1，将$w​$和$b​$合并在一起，合在一起的这个叫做扩充权重向量，书上有提到。
+注意这个原始形式中的迭代公式，可以对$x​$补1，将$w​$和$b​$合并在一起，合在一起的这个叫做**扩充权重向量**，书上有提到。
 
 #### 对偶形式
 
@@ -103,7 +102,7 @@ $$
 >
 > 输出：
 > $$
-> \alpha ,b; f(x)=sign\left(\sum_{j=1}^N\alpha_jy_jx_j\cdot x+b\right)\nonumber\\
+> \alpha ,b; f(x)=sign\left(\sum_{j=1}^N\alpha_jy_jx_j\cdot x+b\right)\\
 > \alpha=(\alpha_1,\alpha_2,\cdots,\alpha_N)^T
 > $$
 >
@@ -113,7 +112,7 @@ $$
 >
 > 1. 如果$y_i\left(\sum_{j=1}^N\alpha_jy_jx_j\cdot x+b\right) \leqslant 0​$
 > $$
-> \alpha_i\leftarrow \alpha_i+\eta \nonumber\\
+> \alpha_i\leftarrow \alpha_i+\eta \\
 > b\leftarrow b+\eta y_i
 > $$
 >
@@ -125,7 +124,7 @@ $$
 
 为了方便可预先将训练集中的实例间的内积计算出来并以矩阵的形式存储，这个矩阵就是所谓的Gram矩阵
 $$
-G=[x_i\cdot x_j]_{N\times N} \nonumber
+G=[x_i\cdot x_j]_{N\times N}
 $$
 
 ## 例子
@@ -209,6 +208,4 @@ $$
 
 ## 参考
 
-1. [^1]: [XOR](https://alan.do/minskys-and-or-theorem-a-single-perceptron-s-limitations-490c63a02e9f)
-
-**[⬆ top](#导读)**
+[1.XOR](https://alan.do/minskys-and-or-theorem-a-single-perceptron-s-limitations-490c63a02e9f)

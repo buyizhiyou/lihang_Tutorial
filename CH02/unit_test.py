@@ -112,4 +112,12 @@ if __name__ == '__main__':
     ap.add_argument("-p", "--path", required=False, help="path to input data file")
     args = vars(ap.parse_args())
 
-    unittest.main()
+    # unittest.main()
+    # 构造测试集：第一步，创建一个测试套件,TestSuite用来装一个或多个测试用例(多个测试方法)
+    suite = unittest.TestSuite()
+    # 添加单条测试方法：只有被添加的测试方法才会被执行
+    suite.addTest(TestPerceptron("test_mnist"))
+    # suite.addTest(TestPerceptron("test_logic_2"))
+    # 执行测试
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
