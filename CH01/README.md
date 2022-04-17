@@ -1,7 +1,5 @@
 # CH01 统计学习及监督学习概论
-![Hits](https://www.smirkcao.info/hit_gits/Lihang/CH01/README.md)
 
-[TOC]
 
 ## 前言
 
@@ -102,8 +100,8 @@
 
 |              | 假设空间$\cal F$                                             | 输入空间$\cal X$ | 输出空间$\cal Y$ | 参数空间      |
 | ------------ | ------------------------------------------------------------ | ---------------- | ---------------- | ------------- |
-| 决策函数     | $\cal F\it =\{f_{\theta} |Y=f_{\theta}(x), \theta \in \bf R \it ^n\}$ | 变量             | 变量             | $\bf R\it ^n$ |
-| 条件概率分布 | $\cal F\it =\{P|P_{\theta}(Y|X),\theta\in \bf R \it ^n\}$    | 随机变量         | 随机变量         | $\bf R\it ^n$ |
+| 决策函数     | $\cal F\it =\{f_{\theta} \|Y=f_{\theta}(x), \theta \in \bf R \it ^n\}$ | 变量             | 变量             | $\bf R\it ^n$ |
+| 条件概率分布 | $\cal F\it =\{P\|P_{\theta}(Y\|X),\theta\in \bf R \it ^n\}$    | 随机变量         | 随机变量         | $\bf R\it ^n$ |
 
 书中描述的时候，有提到**条件概率分布族**，这个留一下，后面[CH06](../CH06/README.md)有提到确认逻辑斯谛分布属于指数分布族。
 
@@ -255,8 +253,7 @@ Classification, Tagging, Regression
 
 参考文献都是大部头，ESL，PRML在列
 
-1. [^1]: [ESL:7.10.1:K-Forld Cross Validation](##参考)
-
-2. [^2 ]: [NNDL](https://github.com/nndl/nndl.github.io/blob/master/chap-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0.pdf)
+[ESL:7.10.1:K-Forld Cross Validation](##参考)   
+[NNDL](https://github.com/nndl/nndl.github.io/blob/master/chap-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0.pdf)
 
 **[⬆ top](#导读)**
