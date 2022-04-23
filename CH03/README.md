@@ -1,7 +1,4 @@
 # CH03 k近邻法
-![Hits](https://www.smirkcao.info/hit_gits/Lihang/CH03/README.md)
-
-[TOC]
 
 ## 前言
 
@@ -176,7 +173,7 @@ KDTree创建
 ### 例3.3
 
 KDTree搜索
-
+![figure](assets/1.jpg)
 ```mermaid
 graph TD
 	subgraph 对应图3.5
@@ -199,14 +196,9 @@ graph TD
 
 ## 参考
 
-1. [^1]: [Lp Space](https://en.wikipedia.org/wiki/Lp_space)
-
-2. ESL
-
-3. [^2]: [KDTree](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html)
-
-4. [^3 ]: [KD Tree: k近邻查询和范围查询](https://ask.hellobi.com/blog/zlx19930503/10481)
-
-5. [^4]: [HUD4347](http://acm.hdu.edu.cn/showproblem.php?pid=4347)
+[Lp Space](https://en.wikipedia.org/wiki/Lp_space)  
+[KDTree](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html)  
+[KD Tree: k近邻查询和范围查询](https://ask.hellobi.com/blog/zlx19930503/10481)  
+[HUD4347](http://acm.hdu.edu.cn/showproblem.php?pid=4347)
 
 **[⬆ top](#导读)**

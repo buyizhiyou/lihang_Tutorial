@@ -11,42 +11,16 @@ import unittest
 
 
 class TestStringMethods(unittest.TestCase):
-
-    def test_e31(self):
-        X = np.loadtxt("Input/data_3-1.txt")
-        # print(X-X[0])
-        rst = np.linalg.norm(X - X[0], ord=1, axis=1)
-        for p in range(2, 5):
-            rst = np.vstack((rst, np.linalg.norm(X-X[0], ord=p, axis=1)))
-        # Lp(x1,x2)
-        self.assertListEqual(np.round(rst[:, 1], 2).tolist(), [4]*4)
-        # Lp(x1,x3)
-        self.assertListEqual(np.round(rst[:, 2], 2).tolist(), [6, 4.24, 3.78, 3.57])
-        # print(np.round(rst[:, 2], 2).tolist())
-
-    def test_e32(self):
-        X = np.loadtxt("Input/data_3-2.txt")
-        clf = KNN()
-        clf.fit(X)
-        logger.info(clf.kdtree)
-
-    def test_e33(self):
-        pass
-
-    def test_q31(self):
-        pass
-
     def test_q32(self):
-        X = np.loadtxt("Input/data_3-2.txt")
-        target = np.array([3, 4.5])
-        clf = KNN()
-        clf.fit(X)
-        rst = clf.predict(target)
-        self.assertListEqual([4, 7], rst.tolist())
-        logger.info(rst)
+        data = np.loadtxt("Input/data_3-2.txt")
+        X,Y = data[:,:2],data[:,2]
+        target = np.array([2, 4.5])
+        clf = KNNKdTree()
+        clf.fit(X,Y)
+        nearest,label = clf.predict(target)
+        self.assertEqual(1,label)
+        logger.info(label)
 
-    def test_q33(self):
-        pass
 
 
 if __name__ == '__main__':
@@ -56,4 +30,13 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument("-p", "--path", required=False, help="path to input data file")
     args = vars(ap.parse_args())
-    unittest.main()
+    # unittest.main()
+    # 构造测试集：第一步，创建一个测试套件,TestSuite用来装一个或多个测试用例(多个测试方法)
+    suite = unittest.TestSuite()
+    # 添加单条测试方法：只有被添加的测试方法才会被执行
+    suite.addTest(TestStringMethods("test_q32"))
+    # suite.addTest(TestStringMethods("test_e31"))
+    # 执行测试
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
+
