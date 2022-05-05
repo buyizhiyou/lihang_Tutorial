@@ -36,8 +36,8 @@ class Maxent(object):
         :param y:
         :return:
         """
-        self.Pxy = np.zeros((self.m, self.n))
-        self.Px = np.zeros(self.n)
+        self.Pxy = np.zeros((self.m, self.n))#(10, 18)
+        self.Px = np.zeros(self.n)#(18,)
 
         # 相当于按照特征统计了
         # 在这个例子里面, 相当于词表的大小是256, 对应的特征就是词表和类别组合
@@ -91,14 +91,15 @@ class Maxent(object):
         :param y:
         :return: self: object
         """
+        import pdb;pdb.set_trace()
         self.X_ = x
         self.y_ = list(set(y))
         tmp = set(self.X_.flatten())
         self.feature_names = defaultdict(int, zip(tmp, range(1, len(tmp)+1)))   # 从1开始编码
         self.label_names = dict(zip(self.y_, range(len(self.y_))))
-        self.n = len(self.feature_names)+1  # for default 0
-        self.m = len(self.label_names)
-        self.N = len(x)  # 训练集大小
+        self.n = len(self.feature_names)+1  # 18
+        self.m = len(self.label_names) #10
+        self.N = len(x)  # 训练集大小 1203
 
         self._px_pxy(x, y)
 
@@ -126,6 +127,7 @@ class Maxent(object):
         :param x:
         :return:
         """
+        import pdb;pdb.set_trace()
         rst = np.zeros(len(x), dtype=np.int64)
         for idx, x_ in enumerate(x):
             tmp = self._pw(x_)

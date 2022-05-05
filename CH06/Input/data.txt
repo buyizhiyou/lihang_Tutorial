@@ -1,3 +1,4 @@
+#play	outlook	temperature	humidity	windy(不同天气能否打球)
 no	sunny	hot	high	FALSE
 no	sunny	hot	high	TRUE
 yes	overcast	hot	high	FALSE
